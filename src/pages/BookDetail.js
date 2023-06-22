@@ -1,5 +1,5 @@
 import React from "react";
-const BookDetail = () => (
+const BookDetail = (props) => (
 <div>BookDetail</div>
 );
 export default BookDetail;
