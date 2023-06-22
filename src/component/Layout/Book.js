@@ -2,31 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate,useLocation } from "react-router-dom";
 export const Book = (props) => {
   const navigate = useNavigate();
-  // const [searchField, setSearchField] = useState("");
-  // function handleOnClick() {
-  //   navigate('/detail', { state: { title: props.book.title } });
-  // }
-
   const [detail, setDetail] = useState("");
-  // const navigate = useNavigate();
-  // function handleOnClick() {
-  //   navigate(`/detail/${encodeURIComponent(props.book.title)}`);
-  // }
   const id = 5;
   function goToDetail(){
     setDetail(props.book.title)
     {console.log(props.book.title)}
-    navigate('/detail', {state : {id : props.book.title}})
+    navigate('/detail', {state : {book : props.book}})
   }
   return (
     <div
       className="flex flex-col  bg-gray-100  rounded-md p-2 cursor-pointer ease-out duration-300  w-full justify-start items-center my-4 "
-      // onClick={() => {
-      //   navigate("/detail", { state: { value: props.book.title } });
-      // }}
-      // onClick={handleOnClick}
-      // onClick={()=>navigate('/detail', {state : {value:  value }} )}
-      // onClick={goToDetail}
+      onClick={goToDetail}
     >
       <div className="flex flex-col  justify-center items-center ">
         <div className="flex flex-row justify-center ">
