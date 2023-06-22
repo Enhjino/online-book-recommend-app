@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import HomePage from "./pages/HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { SearchPage } from "./pages/SearchPage";
+import { CategoryPage } from "./pages/CategoryPage";
 import BookDetail from "./pages/BookDetail";
 
 const router = createBrowserRouter([
@@ -13,13 +13,14 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/search",
-    element: <SearchPage />,
+    path: "/category",
+    element: <CategoryPage />,
   },
   {
     path: "/detail",
     element: <BookDetail/>
   },
+
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
