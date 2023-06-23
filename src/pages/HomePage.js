@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Header } from "../component/Layout/Header";
 import bgImage from "../assets/images/bg.png";
 import { BookList } from "../component/Layout/BookList";
 import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const navigate = useNavigate();
-  const [books, setBooks] = useState([]);
   const currentDate = new Date().toISOString().substr(0, 10);
   function handleClick() {
     navigate("/category");
@@ -28,7 +27,7 @@ const HomePage = () => {
         <br> </br>
       </div>
       <div className=" w-9/12  flex flex-row text-2xl font-semibold justify-between items-center">
-        <BookList books={books} times={5} date={currentDate} />
+        <BookList date={currentDate} />
       </div>
     </div>
   );

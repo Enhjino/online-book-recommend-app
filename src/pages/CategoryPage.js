@@ -3,16 +3,15 @@ import { Header } from "../component/Layout/Header";
 import DatePicker from "react-datepicker";
 import list from "../assets/json/list-name.json";
 import "react-datepicker/dist/react-datepicker.css";
-import searchImage from "../assets/images/search.png";
+// import searchImage from "../assets/images/search.png";
 import { BookList } from "../component/Layout/BookList";
-import { useNavigate } from "react-router-dom";
+
 export const CategoryPage = (props) => {
-  const navigate = useNavigate();
-  const [lists, setLists] = useState([]);
-  const [loading, setLoading] = useState(false);
+
+//   const [loading, setLoading] = useState(false);
   const [date, setDate] = useState(new Date());
   const category = "hardcover-nonfiction";
-  if (loading) return <div> loading </div>;
+//   if (loading) return <div> loading </div>;
   return (
     <div className="flex flex-col items-center">
       <Header />

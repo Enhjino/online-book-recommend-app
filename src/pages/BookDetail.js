@@ -12,7 +12,7 @@ const BookDetail = (props) => {
       <div className="flex flex-row w-5/6 justify-start items-start">
         <li className=" list-none text-5xl  font-semibold ">
           {location.state.book.rank} <br></br>
-          {location.state.book.rank_last_week == 0 ? (
+          {location.state.book.rank_last_week === 0 ? (
             ""
           ) : location.state.book.rank_last_week - location.state.book.rank >
             0 ? (
@@ -26,13 +26,13 @@ const BookDetail = (props) => {
           width={location.state.book.book_image_width}
           height={location.state.book.book_image_height}
           src={location.state.book.book_image}
-          alt="book image"
+          alt=" image"
         />
         <div>
           <div className="text-3xl">
             WEEKS ON LIST : {location.state.book.weeks_on_list}
           </div>
-          {location.state.book.rank_last_week == 0 ? (
+          {location.state.book.rank_last_week === 0 ? (
             ""
           ) : (
             <div className="text-3xl">
