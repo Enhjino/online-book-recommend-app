@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Routes, Route, useNavigate,useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 export const Book = (props) => {
   const navigate = useNavigate();
-  const [detail, setDetail] = useState("");
-  const id = 5;
   function goToDetail(){
     setDetail(props.book.title)
     {console.log(props.book.title)}
@@ -29,7 +27,7 @@ export const Book = (props) => {
         <p className="text-gray-400 text-xs px-2">
           {props.book.weeks_on_list === 1
             ? "NEW THIS WEEK"
-            : props.book.weeks_on_list + " WEEKS ON LIST"}{" "}
+            : props.book.weeks_on_list + " WEEKS ON LIST"}
         </p>
         <h3 className="text-black text-base font-bold px-2">
           {props.book.title}

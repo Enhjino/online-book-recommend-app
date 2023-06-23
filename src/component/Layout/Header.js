@@ -10,10 +10,6 @@ export const Header = (props) => {
         <h1 className="text-2xl font-semibold">BestSellerScape</h1>
       </div>
       <div className="h-full w-auto items-center p-2">
-        {/* <a href="/login" className="no-underline text-2xl font-semibold">
-          Log In
-        </a> */}
-        
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
