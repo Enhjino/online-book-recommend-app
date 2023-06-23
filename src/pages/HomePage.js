@@ -11,29 +11,29 @@ const HomePage = (props) => {
   const [books, setBooks] = useState([]);
   const [lists, setLists] = useState([]);
   const [loading, setLoading] = useState(false);
-  const date = "2023-06-22";
+  const currentDate = new Date().toISOString().substr(0, 10);
   const category = "hardcover-nonfiction";
   // const [category, setCategory] = useState([]);
 
-  const getApiData = async () => {
-    if (loading) return;
-    setLoading(true);
+  // const getApiData = async () => {
+  //   if (loading) return;
+  //   setLoading(true);
 
-    fetch(
-      `https://api.nytimes.com/svc/books/v3/lists/${date}/${category}.json?api-key=Tl5NJoC6hKHIGcdrq1AChaB7M44GDIVz `
-    )
-      .then((response) => response.json())
-      .then((res) => setBooks(res.results.books))
-      .catch((err) => {
-        console.log("book download error", err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
-  useEffect(() => {
-    getApiData();
-  }, [props]);
+  //   fetch(
+  //     `https://api.nytimes.com/svc/books/v3/lists/${date}/${category}.json?api-key=Tl5NJoC6hKHIGcdrq1AChaB7M44GDIVz `
+  //   )
+  //     .then((response) => response.json())
+  //     .then((res) => setBooks(res.results.books))
+  //     .catch((err) => {
+  //       console.log("book download error", err);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // };
+  // useEffect(() => {
+  //   getApiData();
+  // }, [props]);
   function handleClick() {
     navigate("/category");
   }
@@ -58,7 +58,7 @@ const HomePage = (props) => {
         <br></br>
       </div>
       <div className=" w-9/12 ">
-        <BookList books={books} category={category} times={5} />
+        <BookList books={books}  times={5} date={currentDate} />
       </div>
     </div>
   );
