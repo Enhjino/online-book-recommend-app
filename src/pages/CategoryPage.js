@@ -1,30 +1,27 @@
 import React, { useState } from "react";
 import { Header } from "../component/Layout/Header";
 import DatePicker from "react-datepicker";
-import list from "../assets/json/list-name.json";
 import "react-datepicker/dist/react-datepicker.css";
-// import searchImage from "../assets/images/search.png";
 import { BookList } from "../component/Layout/BookList";
-
+import { useLocation } from "react-router-dom";
 export const CategoryPage = (props) => {
-
-//   const [loading, setLoading] = useState(false);
   const [date, setDate] = useState(new Date());
   const category = "hardcover-nonfiction";
-//   if (loading) return <div> loading </div>;
+  const location = useLocation();
+console.log(location.state)
   return (
-    <div className="flex flex-col items-center">
-      <Header />
+    <div className="flex flex-col items-center ">
+      <Header className="bg-pink-200"/>
       <div className=" w-9/12 ">
         <div className="flex flex-row text-2xl font-semibold justify-between items-center">
-          {list[0].list_name}
-          <DatePicker
+          <div>{location.state.jiijy.searchField}</div>
+          <div className="flex justify-center p-2 w-4"><DatePicker  calendarClassName="w-full"
             className="tems-center justify-self-end"
             selected={date}
-            onChange={(date) => setDate(date)}
-          />
+            onChange={(date) => setDate(date) }
+          /></div>
         </div>
-        <BookList category={category} date={date.toISOString().substr(0, 10)} />
+        <BookList  category={location.state.jiijy.searchField} times={15} date={date.toISOString().substr(0, 10)}  />
       </div>
     </div>
   );

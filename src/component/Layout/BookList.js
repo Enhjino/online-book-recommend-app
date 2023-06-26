@@ -13,7 +13,7 @@ export const BookList = (props) => {
     if (loading) return;
     setLoading(true);
     let apiUrl;
-    if (props.category) {
+    if (props.category ) {
       apiUrl = `https://api.nytimes.com/svc/books/v3/lists/${props.date}/${props.category}.json?api-key=Tl5NJoC6hKHIGcdrq1AChaB7M44GDIVz`;
     } else {
       apiUrl = `https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=Tl5NJoC6hKHIGcdrq1AChaB7M44GDIVz`;
@@ -53,8 +53,8 @@ export const BookList = (props) => {
       <div>
         {lists.map((list) => (
           <div key={list.list_name}>
-            <h2>{list.list_name}</h2>
-            <div className="my-0 mx-auto grid grid-cols-5 gap-10  ">
+            <h2 className="text-2xl mb-4" >{list.list_name}</h2>
+            <div className="mb-10 mx-auto grid grid-cols-5 gap-10  ">
               {list.books.map((book, index) => (
                 <Book key={index} book={book} />
               ))}

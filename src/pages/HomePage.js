@@ -17,16 +17,16 @@ const HomePage = () => {
         <Header />
         <p className=" text-4xl font-semibold pt-40 w-1/2 ">
           Welcome to the BestSellerScape New York Times Best Sellers Books
-          Website! <br> </br> <br> </br>
+          Website! <br/><br/> 
           <button
             className="border-solid border-2 rounded-lg text-2xl"
             onClick={handleClick}>
-            Choose Your Category & nbsp;
+            Choose Your Category &nbsp;
           </button>
         </p>
-        <br> </br>
+        <br/>
       </div>
-      <div className=" w-9/12  flex flex-row text-2xl font-semibold justify-between items-center">
+      <div className=" w-9/12  flex flex-row text-2xl font-semibold justify-between items-center mt-10">
         <BookList date={currentDate} />
       </div>
     </div>
