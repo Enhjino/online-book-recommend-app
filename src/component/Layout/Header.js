@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import logoImage from "../../assets/images/book-logo.png";
 import { SearchBar } from "./SearchBar";
 
-export const Header = (props) => {
+export const Header = () => {
   return (
     <div className=" flex flex-row justify-between px-32  h-14 w-full items-center box-border my-5 ">
       <div className="h-4/5 p-2 flex flex-row">
